@@ -194,3 +194,6 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+
+#web configs
+/NHS111/NHS111.Domain.Api/Web.config
