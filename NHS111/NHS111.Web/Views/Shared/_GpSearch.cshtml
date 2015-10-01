@@ -1,0 +1,61 @@
+﻿@model NHS111.Models.Models.Web.OutcomeViewModel
+
+<div class="row">
+    <h3>Your registered GP practice</h3>
+</div>
+<div class="row">
+    <div class="searchBox">
+        <label for="FindGP">
+
+
+            <span>Find your GP practice</span>
+
+
+            <input type="hidden" id="FindGPId" name="SurgeryViewModel.SelectedSurgery" />
+            <input type="text" id="FindGP" placeholder="Type your GP practice name" class="searchInput">
+
+        </label>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $("#FindGP").click(function () {
+            $("#FindGP").val("");
+            $("#FindGPId").val("");
+        }
+        );
+        $("#FindGP").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: '@Url.Action("SearchSurgery", "Outcome")',
+                    type: "post",
+                    data: { input: $("#FindGP").val() },
+                    success: function (data) {
+                        response(data);
+                    },
+                    error: function (textStatus, errorThrown) {
+                        return null;
+                    }
+                });
+            },
+            focus: function (event, ui) {
+                $("#FindGP").val(ui.item.Name);
+                return false;
+            },
+            select: function (event, ui) {
+                $("#FindGP").val(ui.item.Name);
+                $("#FindGPId").val(ui.item.SurgeryId);
+                $("#Next[type=submit]").removeAttr('disabled');
+                return false;
+            }
+        })
+            .autocomplete("instance")._renderItem = function (ul, item) {
+                return $("<li>")
+                    .append("<a>" + item.Name + "</a>")
+                    .appendTo(ul);
+            };
+
+    });
+
+</script>
