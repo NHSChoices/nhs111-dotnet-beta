@@ -21,6 +21,7 @@ namespace NHS111.Web.Presentation.Configuration
         public string BusinessApiCareAdviceUrl { get { return ConfigurationManager.AppSettings["BusinessApiCareAdviceUrl"]; } }
         public string IntegrationApiItkDispatcher { get { return ConfigurationManager.AppSettings["IntegrationApiItkDispatcher"]; } }
         public string BusinessApiFirstQuestionUrl { get { return ConfigurationManager.AppSettings["BusinessApiFirstQuestionUrl"]; } }
+        public string RedisConnectionString { get { return ConfigurationManager.AppSettings["RedisConnectionString"]; } }
     }
 
     public interface IConfiguration
@@ -42,5 +43,6 @@ namespace NHS111.Web.Presentation.Configuration
         string BusinessApiCareAdviceUrl { get; }
         string IntegrationApiItkDispatcher { get; }
         string BusinessApiFirstQuestionUrl { get; }
+        string RedisConnectionString { get; }
     }
 }

@@ -16,6 +16,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 
+using NHS111.Web.Presentation.Configuration;
 using StructureMap;
 
 namespace NHS111.Web.IoC
@@ -24,7 +25,7 @@ namespace NHS111.Web.IoC
     {
         public static IContainer Initialize()
         {
-            return new Container(c => c.AddRegistry<WebRegistry>());
+            return new Container(c => c.AddRegistry(new WebRegistry(new Configuration())));
         }
     }
 }
