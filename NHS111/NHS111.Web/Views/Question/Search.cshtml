@@ -1,0 +1,192 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Scripts {
+
+    <script src="~/scripts/jquery2.1.1.min.js"></script>
+    <script src="~/scripts/jquery1.11.2-ui.min.js"></script>
+    <script src="~/scripts/jquery.blockUI.js"></script>
+    <script src="~/scripts/custom.js"></script>
+
+}
+
+<body id="search">
+
+
+    <header id="disclaimer">
+
+
+        <div class="header">
+            <img src="~/content/img/close.jpg" class="closeDisclaimer close">
+            <!--<a href="#" title="Close Disclaimer" class="closeDisclaimer accessibility">[ X ]</a>-->
+            <div class="discHead">Do i need to call 999?</div>
+        </div>
+        <div id="yellowWrapper">
+            <div id="disclaimerContentWrapper">
+                <div class="contentWrap">
+
+
+                    <div class="subHeader">Call 999 immediately if you have any of the following</div>
+
+                    <ul id="disclaimerHelp">
+                        <li id="left">
+                            <ul>
+                                <li class="firstChild" id="chestPain">
+                                    <a href="#">Central crushing <span class="green">chest pain</span></a>
+                                    <p class="helper">
+                                        A feeling of crushing pressure like a heavy weight pushing down on your chest.
+                                    </p>
+                                </li>
+
+                                <li id="stroke">
+                                    <a href="#">You think you are <span class="green">having a stroke</span> </a>
+                                    <p class="helper">
+                                        Signs of a stroke include being unable to raise both arms and keep them there, difficulty speaking or a lopsided face.
+                                    </p>
+                                </li>
+
+                                <li id="chocking">
+                                    <a href="#">Severe <span class="green">difficulty breathing</span>, choking or turning blue </a>
+                                    <p class="helper">
+                                        This means you are unable to finish a sentence without stopping several times to take a breath. You may be gasping, wheezing or putting a lot of effort into breathing.
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li id="right">
+                            <ul>
+                                <li id="bleeding">
+                                    <a href="#"><span class="green">Bleeding</span> very heavily </a>
+                                    <p class="helper">
+                                        This means heavy bleeding that is continuing despite attempts to stop it.
+                                    </p>
+                                </li>
+
+                                <li id="injury">
+                                    <a href="#">A <span class="green">severe injury</span> </a>
+                                    <p class="helper">
+                                        This includes deep wounds, or injuries caused by falls, assault or road traffic accidents and will require an immediate medical assessment.
+                                    </p>
+                                </li>
+
+                                <li class="lastChild" id="seizure">
+                                    <a href="#">The person you are enquiring about is <span class="green">unconscious </span> having a <span class="green">seizure (fit)</span></a>
+                                    <p class="helper">
+                                        Unconscious - Not awake and totally unaware of what is going on around you. As if you are asleep, but with no response if someone tries to wake you.<br><br>
+
+                                        Seizure - Uncontrolled electrical activity in the brain, which can lead to loss of consciousness and/or loss of bladder and bowel control. Seizures are often known as fits.
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="center">
+                        <a id="close" class="closeDisclaimer button">None of the above apply</a>
+                    </div>
+                </div>
+            </div> <!-- /disclaimerContentWrapper-->
+        </div> <!-- /yellowWrapper-->
+
+
+    </header>
+
+    <div id="wrapper">
+        <header role="banner" class="global-header">
+            <div class="global-header__wrapper">
+                <div class="global-header__logo"> <a href="/" title="Go to Homepage" class="logo"> <img src="~/content/img/med-logo.png" alt="MED"> </a> </div>
+            </div>
+        </header>
+        <div class="content-container">
+            <div id="content">
+                <!--<div id="linkBodySearch"> <a href="#" title="Try our body search instead"><span title="Try our body search" class="left">Try our body</span> <span class="bgIcon"></span> <span class="left">search instead </span></a>
+                </div>-->
+                @using (Html.BeginForm("Gender", "Question", FormMethod.Post))
+                {
+                    <input type="hidden" id="pathwayNo" name="pathwayNo" value="" />
+
+                    <h2>I need help with</h2>
+                    <div class="searchWrap">
+                      
+                        <label for="searchTags">
+                           <input type="text" class="search left rounded" id="searchTags" autocomplete="off" name="searchTags" placeholder="Search for conditions and symptoms" />
+     </label>
+    @* @Html.ActionLink("GO","Gender","Question", new {@class = "go"})*@
+                        <input type="submit" class="go button" value="GO" id="submitSearch">
+
+                       
+
+
+
+                    </div>
+                    <h3>Common symptoms</h3>
+                    <ul id="commonConditions">
+                        <li><a href="#">Abdominal pain</a></li>
+                        <li><a href="#">Fever for under 5 year olds</a></li>
+                        <li><a href="#">Diarrhoea and vomiting</a></li>
+                        <li><a href="#">Colds and flu</a></li>
+                        <li><a href="#">Dental – toothache and dental trauma</a></li>
+
+                    </ul>
+                    
+                    <div id="SearchResults">
+                        @*Search Results appended here as list tags*@
+                    </div>
+                    
+                }
+
+
+            </div>
+            <!--content end-->
+        </div>
+        <footer>
+            <div class="footerWrapper">
+                <div class="footerMeta"> </div>
+            </div>
+        </footer>
+    </div>
+    <!--wrapper ends-->
+
+    <script>
+    // -- search box autocomplete mock script
+    $(function () {
+        $("#searchTags").autocomplete({
+            source: function(request, response) {
+                $.ajax({
+                    url: '@Url.Action("AutosuggestPathways", "Question")',
+                    type: "post",
+                    dataType: "json",
+                    data: { input: $("#searchTags").val() },
+                    success: function(data) {
+                        response(JSON.parse(data).slice(0, 7));
+                    },
+                    error: function(textStatus, errorThrown) {
+                        return null;
+                    }
+                });
+            },
+            focus: function(event, ui) {
+                event.preventDefault();
+                $("#searchTags").val(ui.item.label);
+                return false;
+            },
+            select: function(event, ui) {
+                event.preventDefault();
+                $("#searchTags").val(ui.item.label);
+                $("#pathwayNo").val(ui.item.value);
+                $("input.go").removeAttr("disabled");
+                return false;
+            },
+            open: function (event, ui) {
+                $('.ui-autocomplete').off('menufocus hover mouseover mouseenter');
+            },
+            appendTo: $('#SearchResults')
+        });
+ 
+    });
+
+    </script>
+
+</body>

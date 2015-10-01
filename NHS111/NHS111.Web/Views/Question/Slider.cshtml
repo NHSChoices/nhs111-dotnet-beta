@@ -1,0 +1,132 @@
+﻿@model NHS111.Models.Models.Web.JourneyViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section Scripts {
+    <script src="~/scripts/jquery2.1.1.min.js"></script>
+    <script src="~/scripts/jquery1.11.2-ui.min.js"></script>
+    <script src="~/scripts/jquery.blockUI.js"></script>
+    <script src="../../content/Js/vendor/jquery.nouislider.all.min.js"></script>
+    <script src="~/scripts/custom.js"></script>
+
+}
+
+<body id="gender">
+    <div id="wrapper">
+        <header role="banner" class="global-header">
+            <div class="global-header__wrapper">
+                <div class="global-header__logo"> <a href="/" title="Go to Homepage" class="logo"> <img src="~/content/img/med-logo.png" alt="MED"> </a> </div>
+                <!--<div id="logStatus"> <span title="Logged in as Kevin">Welcome back <strong>Kevin</strong></span> </div>-->
+            </div>
+        </header>
+        <div class="content-container">
+
+            <div id="content">
+                @using (Html.BeginForm("JustToBeSafeFirst", "JustToBeSafe", FormMethod.Post, new { @id = "outerContent" }))
+                {
+                    @Html.HiddenFor(x => Model.PathwayId)
+                    @Html.HiddenFor(x => Model.PathwayNo)
+                    @Html.HiddenFor(x => Model.PathwayTitle)
+                    @Html.HiddenFor(x => Model.UserInfo.Age)
+                    @Html.HiddenFor(x => Model.UserInfo.Gender)
+                    @Html.HiddenFor(x => Model.StateJson)
+
+                    <div id="sliderContent">
+
+                        <h2>A few more details about your @Html.Raw(Model.PathwayTitle)</h2>
+
+                        <div id="twoColumnBlock">
+
+                            <div id="columnOne" class="slider">
+
+
+                                <div id="sliderTop">
+                                    <p class="sliderHeading">How severe are your symptoms?</p>
+                                    <div id="slider-range"></div>
+
+                                    <span class="minHandle">Mild</span> <span class="maxHandle">Severe</span>
+                                </div>
+
+                                <div id="sliderBottom">
+                                    <p class="sliderHeading">How long have you had these symptoms?</p>
+                                    <div id="slider-step"></div>
+                                    <p class="painDays">
+                                        <span class="display-box" id="slider-step-value"></span> Day(s)
+                                    </p>
+                                </div>
+                            </div><!--/columnOne-->
+
+                            <div id="columnTwo">
+                                <img src="~/content/img/bubbleArrow.png" class="leftArrow">
+                                <div class="infoBubble">
+                                    <h3>Did you know?</h3>
+
+                                    <!-- <img src="~/content/img/80percent.png" class="bubbleImg">-->
+
+                                    <p>Many mild illnesses and minor injuries are treatable at home, but sometimes things are more serious and you might need to see a doctor or even go to hospital.</p>
+
+                                    <p> <a href="#" title="Find out more" class="arrorRight">Find out more ></a></p>
+                                </div>
+                            </div>
+                        </div> <!--/twoColumnBlock-->
+                        <input class="button" id="nextScreen" type="submit" value="Next" />
+                    </div>
+                    <!--/sliderContent-->
+                }
+            </div>
+            <!--content end-->
+
+        </div>
+        <footer>
+            <div class="footerWrapper">
+                <div class="footerMeta"> </div>
+            </div>
+        </footer>
+    </div>
+    <!--wrapper ends-->
+    <div id="mobileScroller">
+        <div style="display:none;" class="nav_up" id="nav_up"></div>
+        <div style="display:none;" class="nav_down" id="nav_down"></div>
+    </div>
+
+
+
+
+    <script>
+
+        //**0 is Mild and 10 is Severe
+        $('#slider-range').noUiSlider({
+            start: [0],
+            range: {
+                'min': [0],
+                'max': [10]
+            }
+        });
+
+
+        //STEP SLIDER
+        //* Number of days
+        $('#slider-step').noUiSlider({
+            start: [1],
+            step: 1,
+            range: {
+                'min': [1],
+                'max': [7]
+            }
+
+        });
+
+
+        // remove decimals
+        $('#slider-step').Link('lower').to($('#slider-step-value'), null, wNumb({
+            decimals: 0
+
+        }));
+
+    </script>
+
+
+</body>
