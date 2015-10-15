@@ -152,6 +152,7 @@
     </None>
     <None Include="Web.Development.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -247,6 +248,7 @@
   <Target Name="BeforeBuild">
   </Target>
   <Target Name="AfterBuild">
+    <TransformXml Condition=" '$(Environment)' != '' " Source="Web.config" Transform="Web.$(Environment).config" Destination="Web.config" />
   </Target>
   -->
 </Project>
