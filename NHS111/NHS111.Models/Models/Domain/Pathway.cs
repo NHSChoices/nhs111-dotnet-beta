@@ -22,6 +22,9 @@ namespace NHS111.Models.Models.Domain
         [JsonProperty(PropertyName = "maximumAgeExclusive")]
         public int MaximumAgeExclusive { get; set; }
 
+        [JsonProperty(PropertyName = "module")]
+        public int? Module { get; set; }
+
         [JsonProperty(PropertyName = "symptomGroup")]
         public string SymptomGroup { get; set; }
 

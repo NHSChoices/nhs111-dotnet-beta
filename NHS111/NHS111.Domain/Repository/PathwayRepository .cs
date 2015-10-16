@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Neo4jClient.Cypher;
 using Newtonsoft.Json;
 using NHS111.Models.Models.Domain;
+using NHS111.Utils.Configuration;
 using NHS111.Utils.Extensions;
 
 namespace NHS111.Domain.Repository
@@ -12,19 +13,21 @@ namespace NHS111.Domain.Repository
     public class PathwayRepository : IPathwayRepository
     {
         private readonly IGraphRepository _graphRepository;
+        private readonly IPathwaysConfigurationManager _pathwaysConfigurationManager;
 
-        public PathwayRepository(IGraphRepository graphRepository)
+        public PathwayRepository(IGraphRepository graphRepository, IPathwaysConfigurationManager pathwaysConfigurationManager)
         {
             _graphRepository = graphRepository;
+            _pathwaysConfigurationManager = pathwaysConfigurationManager;
         }
 
         public async Task<Pathway> GetPathway(string id)
         {
-            return await _graphRepository.Client.Cypher.
-                Match(string.Format("(p:Pathway {{ id: \"{0}\" }})", id)).
-                Return(p => p.As<Pathway>()).
-                ResultsAsync.
-                FirstOrDefault();
+            return await _graphRepository.Client.Cypher
+                .Match(_pathwaysConfigurationManager.UseLivePathways, string.Format("(p:Pathway {{ id: \"{0}\" }})", id))
+                .Return(p => p.As<Pathway>())
+                .ResultsAsync
+                .FirstOrDefault();
         }
 
         public async Task<Pathway> GetIdentifiedPathway(IEnumerable<string> pathwayNumbers, string gender, int age)
@@ -34,41 +37,41 @@ namespace NHS111.Domain.Repository
             var ageIsBelowMaximum = new Func<int, string>(a => string.Format("(p.maximumAgeExclusive is null or p.maximumAgeExclusive = \"\" or {0} < p.maximumAgeExclusive)", a));
             var pathwayNumberIn = new Func<IEnumerable<string>, string>(p => string.Format("p.pathwayNo in {0}", JsonConvert.SerializeObject(p)));
 
-            return await _graphRepository.Client.Cypher.
-                Match(string.Format("(p:Pathway)")).
-                Where(string.Join(" and ", new List<string> { genderIs(gender), ageIsAboveMinimum(age), ageIsBelowMaximum(age), pathwayNumberIn(pathwayNumbers) })).
-                Return(p => Return.As<Pathway>("p")).
-                ResultsAsync.
-                FirstOrDefault();
+            return await _graphRepository.Client.Cypher
+                .Match("(p:Pathway)")
+                .Where(string.Join(" and ", new List<string> { genderIs(gender), ageIsAboveMinimum(age), ageIsBelowMaximum(age), pathwayNumberIn(pathwayNumbers) }), _pathwaysConfigurationManager.UseLivePathways)
+                .Return(p => Return.As<Pathway>("p"))
+                .ResultsAsync
+                .FirstOrDefault();
         }
 
         public async Task<IEnumerable<Pathway>> GetAllPathways()
         {
-            return await _graphRepository.Client.Cypher.
-                Match("(p:Pathway)").
-                Return(p => p.As<Pathway>()).
-                ResultsAsync;
+            return await _graphRepository.Client.Cypher
+                .Match(_pathwaysConfigurationManager.UseLivePathways, "(p:Pathway)")
+                .Return(p => p.As<Pathway>())
+                .ResultsAsync;
         }
 
         public async Task<IEnumerable<GroupedPathways>> GetGroupedPathways()
         {
             //match (p:Pathway) return DISTINCT(p.group), collect (p.pathwayNo)
-            return await _graphRepository.Client.Cypher.
-                Match("(p:Pathway)").
-                Where("p.module = \"1\"").
-                Return(p => new GroupedPathways { Group = Return.As<string>("distinct(p.title)"), PathwayNumbers = Return.As<IEnumerable<string>>("collect(p.pathwayNo)") }).
-                ResultsAsync;
+            return await _graphRepository.Client.Cypher
+                .Match(true, "(p:Pathway)")
+                .Where("p.module = \"1\"", _pathwaysConfigurationManager.UseLivePathways)
+                .Return(p => new GroupedPathways { Group = Return.As<string>("distinct(p.title)"), PathwayNumbers = Return.As<IEnumerable<string>>("collect(p.pathwayNo)") })
+                .ResultsAsync;
         }
 
-        public async Task<String> GetSymptomGroup(IList<string> pathwayNos)
+        public async Task<string> GetSymptomGroup(IList<string> pathwayNos)
         {
-            var synptomGroups = await _graphRepository.Client.Cypher
-                .Match("(p:Pathway)")
-                .Where(string.Format("p.pathwayNo in [{0}]", string.Join(", ", pathwayNos.Select(p => "\"" + p + "\""))))
+            var symptomGroups = await _graphRepository.Client.Cypher
+                .Match(true, "(p:Pathway)")
+                .Where(string.Format("p.pathwayNo in [{0}]", string.Join(", ", pathwayNos.Select(p => "\"" + p + "\""))), _pathwaysConfigurationManager.UseLivePathways)
                 .Return(p => new SymptomGroup { PathwayNo = Return.As<string>("p.pathwayNo"), Code = Return.As<string>("collect(distinct(p.symptomGroup))[0]")})
                 .ResultsAsync;
 
-            return synptomGroups
+            return symptomGroups
                 .OrderBy(symptomGroup => pathwayNos.IndexOf(symptomGroup.PathwayNo))
                 .Last(symptomGroup => !string.IsNullOrEmpty(symptomGroup.Code))
                 .Code;
@@ -81,6 +84,8 @@ namespace NHS111.Domain.Repository
         Task<Pathway> GetIdentifiedPathway(IEnumerable<string> pathwayNumbers, string gender, int age);
         Task<IEnumerable<Pathway>> GetAllPathways();
         Task<IEnumerable<GroupedPathways>> GetGroupedPathways();
-        Task<String> GetSymptomGroup(IList<string> pathwayNos);
+        Task<string> GetSymptomGroup(IList<string> pathwayNos);
     }
+
+    
 }
