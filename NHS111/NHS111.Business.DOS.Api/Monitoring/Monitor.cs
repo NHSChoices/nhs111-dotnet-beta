@@ -1,0 +1,39 @@
+﻿using System;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using NHS111.Business.DOS.Api.Configuration;
+using NHS111.Utils.Helpers;
+using NHS111.Utils.Monitoring;
+
+namespace NHS111.Business.DOS.Api.Monitoring
+{
+    public class Monitor : BaseMonitor
+    {
+        private readonly IRestfulHelper _restfulHelper;
+        private readonly IConfiguration _configuration;
+
+        public Monitor(IRestfulHelper restfulHelper, IConfiguration configuration)
+        {
+            _restfulHelper = restfulHelper;
+            _configuration = configuration;
+        }
+
+        public override string Metrics()
+        {
+            return "Metrics";
+        }
+
+        public override async Task<bool> Health()
+        {
+            try
+            {
+                return JsonConvert.DeserializeObject<bool>(await _restfulHelper.GetAsync(_configuration.DomainDOSApiMonitorHealthUrl));
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+        }
+    }
+}
