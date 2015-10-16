@@ -57,7 +57,7 @@ namespace NHS111.Domain.Repository
         {
             //match (p:Pathway) return DISTINCT(p.group), collect (p.pathwayNo)
             return await _graphRepository.Client.Cypher
-                .Match(true, "(p:Pathway)")
+                .Match("(p:Pathway)")
                 .Where("p.module = \"1\"", _pathwaysConfigurationManager.UseLivePathways)
                 .Return(p => new GroupedPathways { Group = Return.As<string>("distinct(p.title)"), PathwayNumbers = Return.As<IEnumerable<string>>("collect(p.pathwayNo)") })
                 .ResultsAsync;
@@ -66,7 +66,7 @@ namespace NHS111.Domain.Repository
         public async Task<string> GetSymptomGroup(IList<string> pathwayNos)
         {
             var symptomGroups = await _graphRepository.Client.Cypher
-                .Match(true, "(p:Pathway)")
+                .Match("(p:Pathway)")
                 .Where(string.Format("p.pathwayNo in [{0}]", string.Join(", ", pathwayNos.Select(p => "\"" + p + "\""))), _pathwaysConfigurationManager.UseLivePathways)
                 .Return(p => new SymptomGroup { PathwayNo = Return.As<string>("p.pathwayNo"), Code = Return.As<string>("collect(distinct(p.symptomGroup))[0]")})
                 .ResultsAsync;
