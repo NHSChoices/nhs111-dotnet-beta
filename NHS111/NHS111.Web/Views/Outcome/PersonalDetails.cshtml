@@ -4,13 +4,6 @@
 }
 <script src="~/content/Js/vendor/spin.min.js"></script>
 <link rel="stylesheet" href="~/content/styles/vendor/jquery-ui.css">
-<div id="loading">
-    <div id="loadingcontent">
-        <p id="loadingspinner">
-            Searching for available healthcare providers...
-        </p>
-    </div>
-</div>
 
 
 @using (Html.BeginForm("ServiceDetails", "Outcome", FormMethod.Post))
@@ -88,14 +81,15 @@
                     <div class="row sectionHead">
                         <p class="title">Home address</p>
                     </div>
-                        @*<div class="row bgColor" style="display:none;">
+                        <div class="row bgColor">
                          
 
                             @Html.Partial("_PostCodeSearch", Model.AddressSearchViewModel)
 
-                        </div>*@ <!--bgColor-->
+                        </div> <!--bgColor-->
+                    @*
                                 @Html.Partial("_AddressDetails", Model)
-                        
+                      *@  
                       
                         <!-- /AdditionalInfo -->
                        
@@ -117,28 +111,5 @@
             </footer>
         </div>
     </div> <!-- /site -->
-    
-    <!--Spinner script-->
-    <script type="text/javascript">
-    $(function () {
-        $("#Next").click(function () {
-            $("#loading").fadeIn();
-            var opts = {
-                lines: 12, // The number of lines to draw
-                length: 7, // The length of each line
-                width: 4, // The line thickness
-                radius: 10, // The radius of the inner circle
-                color: '#000', // #rgb or #rrggbb
-                speed: 1, // Rounds per second
-                trail: 60, // Afterglow percentage
-                shadow: false, // Whether to render a shadow
-                hwaccel: false // Whether to use hardware acceleration
-            };
-            var target = document.getElementById('loading');
-            var spinner = new Spinner(opts).spin(target);
-        });
-    });
-    </script>
-
 
 }

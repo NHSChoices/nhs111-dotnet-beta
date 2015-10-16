@@ -4,7 +4,7 @@
 <div id="loading">
     <div id="loadingcontent">
         <p id="loadingspinner">
-            Searching for emergency treatment centre...
+            Searching for addresses matching '<span id="postcodeSpan"></span>'...
         </p>
     </div>
 </div>
@@ -13,22 +13,19 @@
     <div class="row small" id="PC">
         <label>
             <span class="hidden">Enter current postcode</span>
-            @Html.TextBox("AddressSearchViewModel.PostCode", Model.PostCode, new { @placeholder = "Enter current postcode", @class = "postcode", @id = "AddressSearchViewModel.PostCode" })
-            <input type="submit" class="button submitButton searchPostcode" name="TempDosResults" value=" search" id="btnSearch" disabled="disabled">
+            @Html.TextBox("AddressSearchViewModel.PostCode", Model.PostCode, new { @placeholder = "Enter current postcode", @class = "postcode", @id = "AddressSearchViewModel_PostCode" })
+            <input type="button" class="button submitButton searchPostcode" name="TempDosResults" value=" search" id="btnSearch">
         </label>
     </div>
 
 
-    @if (Model.SelectListItems.Any())
-    {
-        <div class="row" id="AddressList">
-            <label>
-                <span>Pick an address</span>
-                @Html.DropDownListFor(x => x.SelectListItems, Model.SelectListItems, new { @class = "address" })
-                @Html.HiddenFor(x => x.SelectedAddress)
-            </label>
-        </div>
-    }
+    <div class="row" id="AddressList">
+        <label>
+            <span>Pick an address</span>
+            <select id="AddressSelect"></select>
+        </label>
+    </div>
+
     <div class="row enterManually">
         <a href="#" class="links manualEntry">I don't know my current postcode</a>
     </div>
@@ -54,8 +51,28 @@
                 shadow: false, // Whether to render a shadow
                 hwaccel: false // Whether to use hardware acceleration
             };
+            var postcode = $("#AddressSearchViewModel_PostCode").val();
+            $("#postcodeSpan").text(postcode.toUpperCase());
             var target = document.getElementById('loading');
             var spinner = new Spinner(opts).spin(target);
+
+            $.ajax({
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                type: "GET",
+                url: "@Model.PostcodeApiAddress.Replace("{0}", "")" + postcode,
+                headers: {
+                    "Ocp-Apim-Subscription-Key": "@Model.PostcodeApiSubscriptionKey"
+                },
+                success: function(response) {
+                    spinner.stop();
+                    $("#loading").fadeOut();
+                    var select = $("#AddressSelect");
+                    $.each(response, function () {
+                        select.append($("<option />").val(this.UPRN).text(this.AddressLines[0]));
+                    });
+                }
+            });
         });
     });
 </script>
