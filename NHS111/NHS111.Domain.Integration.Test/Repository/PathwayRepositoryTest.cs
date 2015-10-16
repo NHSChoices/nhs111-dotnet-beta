@@ -136,8 +136,23 @@ namespace NHS111.Domain.Integration.Test.Repository
             MockPathwaysConfigurationManager.Setup(m => m.UseLivePathways).Returns(false);
             _pathwayRepository = new PathwayRepository(GraphRepository, MockPathwaysConfigurationManager.Object);
 
+            var allDistinctPathways = Pathways.Where(p => p.Module == "1").Select(p => p.Title).Distinct();
+
             var res = await _pathwayRepository.GetGroupedPathways();
-            Assert.IsNull(res);
+            Assert.AreEqual(res.Count(), allDistinctPathways.Count());
+        }
+
+        [Test]
+        public async void GetGroupedPathways_when_only_using_live_returns_grouped_pathways()
+        {
+            MockPathwaysConfigurationManager.Setup(m => m.UseLivePathways).Returns(true);
+            _pathwayRepository = new PathwayRepository(GraphRepository, MockPathwaysConfigurationManager.Object);
+
+            var liveOnlyPathways = PathwaysConfigurationManager.GetLivePathwaysElements().Select(e => e.Title);
+            var liveOnlyDistinctPathways = Pathways.Where(p => p.Module == "1" && liveOnlyPathways.Contains(p.Title)).Select(p => p.Title).Distinct();
+
+            var res = await _pathwayRepository.GetGroupedPathways();
+            Assert.AreEqual(res.Count(), liveOnlyDistinctPathways.Count());
         }
     }
 }
