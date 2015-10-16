@@ -9,6 +9,8 @@ namespace NHS111.Models.Models.Web
         public string PostCode { get; set; }
         public List<AddressInfo> AddressInfoList { get; set; }
         public string SelectedAddress { get; set; }
+        public string PostcodeApiAddress { get; set; }
+        public string PostcodeApiSubscriptionKey { get; set; }
 
         public IEnumerable<SelectListItem> SelectListItems
         {
