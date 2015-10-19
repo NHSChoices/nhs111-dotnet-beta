@@ -1,7 +1,7 @@
 ﻿@model  NHS111.Models.Models.Web.AddressSearchViewModel
 <script src="~/content/Js/vendor/spin.min.js"></script>
 <link rel="stylesheet" href="~/content/styles/vendor/jquery-ui.css">
-<div id="loading">
+<div id="loadingPostcode">
     <div id="loadingcontent">
         <p id="loadingspinner">
             Searching for addresses matching <span id="postcodeSpan"></span>...
@@ -13,7 +13,7 @@
     <div class="row medium" id="PC">
         <label>
             @Html.TextBox("AddressSearchViewModel.PostCode", Model.PostCode, new { @placeholder = "Enter current postcode", @class = "postcode", @id = "AddressSearchViewModel_PostCode" })
-            <input type="button" class="button submitButton searchPostcode" name="TempDosResults" value=" search" id="btnSearch">
+            <input type="button" class="button submitButton searchPostcode" name="TempDosResults" value=" search" id="btnSearchPostcode">
         </label>
     </div>
 
@@ -38,8 +38,8 @@
 
         var addresses = [];
 
-        $("#btnSearch").click(function () {
-            $("#loading").fadeIn();
+        $("#btnSearchPostcode").click(function () {
+            $("#loadingPostcode").fadeIn();
             var opts = {
                 lines: 12, // The number of lines to draw
                 length: 7, // The length of each line
@@ -53,7 +53,7 @@
             };
             var postcode = $("#AddressSearchViewModel_PostCode").val();
             $("#postcodeSpan").text(postcode.toUpperCase());
-            var target = document.getElementById('loading');
+            var target = document.getElementById('loadingPostcode');
             var spinner = new Spinner(opts).spin(target);
             $.ajax({
                 contentType: "application/json; charset=utf-8",
