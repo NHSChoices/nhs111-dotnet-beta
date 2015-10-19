@@ -45,9 +45,9 @@
     <Reference Include="Moq">
       <HintPath>..\packages\Moq.4.2.1502.0911\lib\net40\Moq.dll</HintPath>
     </Reference>
-    <Reference Include="Neo4jClient, Version=1.0.0.662, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Neo4jClient, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Neo4jClient.1.0.0.662\lib\net40\Neo4jClient.dll</HintPath>
+      <HintPath>..\packages\Neo4jClient.1.1.0.9\lib\net45\Neo4jClient.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
