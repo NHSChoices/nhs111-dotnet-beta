@@ -86,7 +86,7 @@ $(document).ready(function () {
     // show manual entry
     $(".manualEntry").click(function () {
         $("#AddressList").hide();
-        $("#ManualEntryHome").show();
+        $("#AddressDetails").show();
         $(".enterManually").hide();
         $("#PC").hide();
 

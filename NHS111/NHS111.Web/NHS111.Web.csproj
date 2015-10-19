@@ -631,6 +631,7 @@
     <Content Include="Views\_Old\Emergency.cshtml" />
     <Content Include="Views\Shared\_CommonHiddenFieldsJourneyViewModel.cshtml" />
     <Content Include="Views\Shared\_CommonHiddenFieldsOutcomeViewModel.cshtml" />
+    <Content Include="Views\Shared\_PersonalPostCodeSearch.cshtml" />
     <None Include="Web.Development.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
