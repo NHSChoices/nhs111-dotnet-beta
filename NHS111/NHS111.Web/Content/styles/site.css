@@ -550,8 +550,8 @@ button.changeAddress:hover{
 #PersonalDetails #AboutYou .searchPostcode {
     float: left;
     margin: 1px 0 0 9px;
-    padding: 10px 20px;
-    width: auto;
+    padding: 10px 14px;
+    width: 119px;
 }
 
 #PersonalDetails .enterManually{
