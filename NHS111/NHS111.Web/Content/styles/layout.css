@@ -296,7 +296,7 @@ footer,
 
 /*Spinner styles*/
 
-#loading {
+#loading, #loadingPostcode {
     display: none;
     position: fixed;
     left: 0;
