@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using NHS111.Models.Models.Web;
 using NHS111.Utils.Attributes;
 using NHS111.Web.Presentation.Builders;
+using NHS111.Web.Presentation.Configuration;
 
 namespace NHS111.Web.Controllers
 {
@@ -66,6 +67,23 @@ namespace NHS111.Web.Controllers
         public async Task<ActionResult> Emergency()
         {
             return View();
+        }
+
+        [HttpGet]
+        [ActionName("DispositionSelection")]
+        public ActionResult PersonalDetails()
+        {
+            var model = new OutcomeViewModel();
+            var config = new Configuration();
+            model.AddressSearchViewModel.PostcodeApiAddress = config.PostcodeSearchByIdApiUrl;
+            model.AddressSearchViewModel.PostcodeApiSubscriptionKey = config.PostcodeSubscriptionKey;
+
+            model.Id = "Dx38";
+            model.UserInfo = new UserInfo() { Age = 38, Gender = "Female" };
+            model.SymptomGroup = "1203";
+            model.SymptomDiscriminator = "4003";
+            
+            return View("PersonalDetails", model);
         }
 
         [HttpPost]
