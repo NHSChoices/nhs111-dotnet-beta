@@ -14,6 +14,7 @@ namespace NHS111.Web.Presentation.Configuration
         public string BusinessApiJustToBeSafePartOneUrl { get { return ConfigurationManager.AppSettings["BusinessApiJustToBeSafePartOneUrl"]; } }
         public string BusinessApiJustToBeSafePartTwoUrl { get { return ConfigurationManager.AppSettings["BusinessApiJustToBeSafePartTwoUrl"]; } }
         public string PostcodeSearchByIdApiUrl { get { return ConfigurationManager.AppSettings["PostcodeSearchByIdApiUrl"]; } }
+        public string PostcodeSubscriptionKey { get { return ConfigurationManager.AppSettings["PostcodeSubscriptionKey"]; } }
         public string BusinessApiPathwayIdUrl { get { return ConfigurationManager.AppSettings["BusinessApiPathwayIdUrl"]; } }
         public string BusinessApiPathwaySymptomGroupUrl { get { return ConfigurationManager.AppSettings["BusinessApiPathwaySymptomGroupUrl"]; } }
         public string BusinessApiNextNodeUrl { get { return ConfigurationManager.AppSettings["BusinessApiNextNodeUrl"]; } }
@@ -39,6 +40,7 @@ namespace NHS111.Web.Presentation.Configuration
         string BusinessApiJustToBeSafePartOneUrl { get; }
         string BusinessApiJustToBeSafePartTwoUrl { get; }
         string PostcodeSearchByIdApiUrl { get; }
+        string PostcodeSubscriptionKey { get; }
         string BusinessApiPathwayIdUrl { get; }
         string BusinessApiPathwaySymptomGroupUrl { get; }
         string BusinessApiNextNodeUrl { get; }

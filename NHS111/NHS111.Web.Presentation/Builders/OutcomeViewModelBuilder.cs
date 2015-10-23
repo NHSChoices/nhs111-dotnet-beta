@@ -91,6 +91,8 @@ namespace NHS111.Web.Presentation.Builders
         {
             var addresses = await SearchPostcodeBuilder(model.AddressSearchViewModel.PostCode);
             model.AddressSearchViewModel.AddressInfoList = addresses;
+            model.AddressSearchViewModel.PostcodeApiAddress = _configuration.PostcodeSearchByIdApiUrl;
+            model.AddressSearchViewModel.PostcodeApiSubscriptionKey = _configuration.PostcodeSubscriptionKey;
             return model;
         }
 
@@ -100,6 +102,9 @@ namespace NHS111.Web.Presentation.Builders
             {
                 return await PostCodeSearchBuilder(model);
             }
+
+            model.AddressSearchViewModel.PostcodeApiAddress = _configuration.PostcodeSearchByIdApiUrl;
+            model.AddressSearchViewModel.PostcodeApiSubscriptionKey = _configuration.PostcodeSubscriptionKey;
 
             model.CareAdvices = await _careAdviceBuilder.FillCareAdviceBuilder(model.UserInfo.Age, model.UserInfo.Gender, model.CareAdviceMarkers.ToList());
             return model;

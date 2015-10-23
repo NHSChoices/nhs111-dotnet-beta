@@ -75,6 +75,7 @@
       <HintPath>..\packages\structuremap.3.1.4.143\lib\net40\StructureMap.Net4.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.WebRequest" />
@@ -95,6 +96,9 @@
     <Compile Include="Mappers\WebMappings\FromOutcomeViewModelToDosViewModel.cs" />
     <Compile Include="Mappers\WebMappings\FromPafToAddressInfo.cs" />
     <Compile Include="Models\Business\Suggestion.cs" />
+    <Compile Include="Models\Configuration\LivePathwaysCollection.cs" />
+    <Compile Include="Models\Configuration\LivePathwaysElement.cs" />
+    <Compile Include="Models\Configuration\PathwaysSection.cs" />
     <Compile Include="Models\Domain\Answer.cs" />
     <Compile Include="Models\Domain\CareAdvice.cs" />
     <Compile Include="Models\Domain\GroupedPathways.cs" />

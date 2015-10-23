@@ -123,27 +123,28 @@ Parameter name: value -    at Newtonsoft.Json.Utilities.ValidationUtils.Argument
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<>c__DisplayClass28.<BeginInvokeAction>b__19()
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<BeginInvokeAction>b__1b(IAsyncResult asyncResult) - System.Collections.ListDictionaryInternal
-2015-10-19 16:43:06,817 [19] ERROR NHS111.Utils.Logging.Log4Net - ERROR on Outcome/SearchSurgery:  Unable to connect to the remote server -    at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+2015-10-12 17:04:44,958 [11] ERROR NHS111.Utils.Logging.Log4Net - ERROR on Question/AutosuggestPathways:  The remote server returned an error: (500) Internal Server Error. -    at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
    at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
    at System.Net.WebClient.DownloadBitsResponseCallback(IAsyncResult result)
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
-   at NHS111.Utils.Helpers.RestfulHelper.<GetAsync>d__0.MoveNext() in c:\DASProjects\Development\nhs111-dotnet-beta\NHS111\NHS111.Utils\Helpers\RestfulHelper.cs:line 20
+   at NHS111.Utils.Helpers.RestfulHelper.<GetAsync>d__0.MoveNext() in l:\Work\111 Online\nhs111-dotnet-beta\NHS111\NHS111.Utils\Helpers\RestfulHelper.cs:line 20
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
-   at NHS111.Web.Presentation.Builders.OutcomeViewModelBuilder.<SearchSurgeryBuilder>d__0.MoveNext() in c:\DASProjects\Development\nhs111-dotnet-beta\NHS111\NHS111.Web.Presentation\Builders\OutcomeViewModelBuilder.cs:line 40
+   at NHS111.Web.Presentation.Builders.QuestionViewModelBuilder.<BuildSearch>d__13.MoveNext() in l:\Work\111 Online\nhs111-dotnet-beta\NHS111\NHS111.Web.Presentation\Builders\QuestionViewModelBuilder.cs:line 100
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
-   at NHS111.Web.Controllers.OutcomeController.<SearchSurgery>d__0.MoveNext() in c:\DASProjects\Development\nhs111-dotnet-beta\NHS111\NHS111.Web\Controllers\OutcomeController.cs:line 24
+   at NHS111.Web.Controllers.QuestionController.<AutosuggestPathways>d__2.MoveNext() in l:\Work\111 Online\nhs111-dotnet-beta\NHS111\NHS111.Web\Controllers\QuestionController.cs:line 32
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
    at lambda_method(Closure , Task )
    at System.Threading.Tasks.TaskHelpersExtensions.ThrowIfFaulted(Task task)
    at System.Web.Mvc.Async.TaskAsyncActionDescriptor.EndExecute(IAsyncResult asyncResult)
@@ -161,27 +162,28 @@ Parameter name: value -    at Newtonsoft.Json.Utilities.ValidationUtils.Argument
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<>c__DisplayClass28.<BeginInvokeAction>b__19()
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<BeginInvokeAction>b__1b(IAsyncResult asyncResult) - System.Collections.ListDictionaryInternal
-2015-10-19 16:43:06,972 [23] ERROR NHS111.Utils.Logging.Log4Net - ERROR on Outcome/SearchSurgery:  Unable to connect to the remote server -    at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+2015-10-12 17:04:45,741 [9] ERROR NHS111.Utils.Logging.Log4Net - ERROR on Question/AutosuggestPathways:  The remote server returned an error: (500) Internal Server Error. -    at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
    at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
    at System.Net.WebClient.DownloadBitsResponseCallback(IAsyncResult result)
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
-   at NHS111.Utils.Helpers.RestfulHelper.<GetAsync>d__0.MoveNext() in c:\DASProjects\Development\nhs111-dotnet-beta\NHS111\NHS111.Utils\Helpers\RestfulHelper.cs:line 20
+   at NHS111.Utils.Helpers.RestfulHelper.<GetAsync>d__0.MoveNext() in l:\Work\111 Online\nhs111-dotnet-beta\NHS111\NHS111.Utils\Helpers\RestfulHelper.cs:line 20
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
-   at NHS111.Web.Presentation.Builders.OutcomeViewModelBuilder.<SearchSurgeryBuilder>d__0.MoveNext() in c:\DASProjects\Development\nhs111-dotnet-beta\NHS111\NHS111.Web.Presentation\Builders\OutcomeViewModelBuilder.cs:line 40
+   at NHS111.Web.Presentation.Builders.QuestionViewModelBuilder.<BuildSearch>d__13.MoveNext() in l:\Work\111 Online\nhs111-dotnet-beta\NHS111\NHS111.Web.Presentation\Builders\QuestionViewModelBuilder.cs:line 100
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
-   at NHS111.Web.Controllers.OutcomeController.<SearchSurgery>d__0.MoveNext() in c:\DASProjects\Development\nhs111-dotnet-beta\NHS111\NHS111.Web\Controllers\OutcomeController.cs:line 24
+   at NHS111.Web.Controllers.QuestionController.<AutosuggestPathways>d__2.MoveNext() in l:\Work\111 Online\nhs111-dotnet-beta\NHS111\NHS111.Web\Controllers\QuestionController.cs:line 32
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
    at lambda_method(Closure , Task )
    at System.Threading.Tasks.TaskHelpersExtensions.ThrowIfFaulted(Task task)
    at System.Web.Mvc.Async.TaskAsyncActionDescriptor.EndExecute(IAsyncResult asyncResult)
@@ -199,27 +201,28 @@ Parameter name: value -    at Newtonsoft.Json.Utilities.ValidationUtils.Argument
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<>c__DisplayClass28.<BeginInvokeAction>b__19()
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<BeginInvokeAction>b__1b(IAsyncResult asyncResult) - System.Collections.ListDictionaryInternal
-2015-10-19 16:43:07,738 [19] ERROR NHS111.Utils.Logging.Log4Net - ERROR on Outcome/SearchSurgery:  Unable to connect to the remote server -    at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+2015-10-12 17:04:49,345 [27] ERROR NHS111.Utils.Logging.Log4Net - ERROR on Question/AutosuggestPathways:  The remote server returned an error: (500) Internal Server Error. -    at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
    at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
    at System.Net.WebClient.DownloadBitsResponseCallback(IAsyncResult result)
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
-   at NHS111.Utils.Helpers.RestfulHelper.<GetAsync>d__0.MoveNext() in c:\DASProjects\Development\nhs111-dotnet-beta\NHS111\NHS111.Utils\Helpers\RestfulHelper.cs:line 20
+   at NHS111.Utils.Helpers.RestfulHelper.<GetAsync>d__0.MoveNext() in l:\Work\111 Online\nhs111-dotnet-beta\NHS111\NHS111.Utils\Helpers\RestfulHelper.cs:line 20
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
-   at NHS111.Web.Presentation.Builders.OutcomeViewModelBuilder.<SearchSurgeryBuilder>d__0.MoveNext() in c:\DASProjects\Development\nhs111-dotnet-beta\NHS111\NHS111.Web.Presentation\Builders\OutcomeViewModelBuilder.cs:line 40
+   at NHS111.Web.Presentation.Builders.QuestionViewModelBuilder.<BuildSearch>d__13.MoveNext() in l:\Work\111 Online\nhs111-dotnet-beta\NHS111\NHS111.Web.Presentation\Builders\QuestionViewModelBuilder.cs:line 100
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
-   at NHS111.Web.Controllers.OutcomeController.<SearchSurgery>d__0.MoveNext() in c:\DASProjects\Development\nhs111-dotnet-beta\NHS111\NHS111.Web\Controllers\OutcomeController.cs:line 24
+   at NHS111.Web.Controllers.QuestionController.<AutosuggestPathways>d__2.MoveNext() in l:\Work\111 Online\nhs111-dotnet-beta\NHS111\NHS111.Web\Controllers\QuestionController.cs:line 32
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
    at lambda_method(Closure , Task )
    at System.Threading.Tasks.TaskHelpersExtensions.ThrowIfFaulted(Task task)
    at System.Web.Mvc.Async.TaskAsyncActionDescriptor.EndExecute(IAsyncResult asyncResult)
@@ -237,116 +240,441 @@ Parameter name: value -    at Newtonsoft.Json.Utilities.ValidationUtils.Argument
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<>c__DisplayClass28.<BeginInvokeAction>b__19()
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<BeginInvokeAction>b__1b(IAsyncResult asyncResult) - System.Collections.ListDictionaryInternal
-2015-10-22 15:59:13,255 [18] ERROR NHS111.Utils.Logging.Log4Net - ERROR on Question/AutosuggestPathways:  Unexpected character encountered while parsing value: <. Path '', line 0, position 0. -    at Newtonsoft.Json.JsonTextReader.ParseValue()
-   at Newtonsoft.Json.JsonTextReader.ReadInternal()
-   at Newtonsoft.Json.JsonTextReader.Read()
-   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.ReadForType(JsonReader reader, JsonContract contract, Boolean hasConverter)
-   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
-   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
-   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
-   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
-   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
-   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
-   at NHS111.Web.Presentation.Builders.QuestionViewModelBuilder.<BuildSearch>d__13.MoveNext() in c:\DASProjects\Development\nhs111-dotnet-beta\NHS111\NHS111.Web.Presentation\Builders\QuestionViewModelBuilder.cs:line 101
+2015-10-19 15:54:43,987 [14] ERROR NHS111.Utils.Logging.Log4Net - ERROR on Question/AutosuggestPathways:  The remote server returned an error: (500) Internal Server Error. -    at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.DownloadBitsResponseCallback(IAsyncResult result)
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
-   at NHS111.Web.Controllers.QuestionController.<AutosuggestPathways>d__2.MoveNext() in c:\DASProjects\Development\nhs111-dotnet-beta\NHS111\NHS111.Web\Controllers\QuestionController.cs:line 32
+   at NHS111.Utils.Helpers.RestfulHelper.<GetAsync>d__2.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Utils\Helpers\RestfulHelper.cs:line 20
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Presentation.Builders.QuestionViewModelBuilder.<BuildSearch>d__10.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web.Presentation\Builders\QuestionViewModelBuilder.cs:line 100
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Controllers.QuestionController.<AutosuggestPathways>d__4.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web\Controllers\QuestionController.cs:line 32
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at lambda_method(Closure , Task )
-   at System.Threading.Tasks.TaskHelpersExtensions.ThrowIfFaulted(Task task)
    at System.Web.Mvc.Async.TaskAsyncActionDescriptor.EndExecute(IAsyncResult asyncResult)
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass34.<BeginInvokeAsynchronousActionMethod>b__33(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3c()
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass45.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3e()
-   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass30.<BeginInvokeActionMethodWithFilters>b__2f(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<>c__DisplayClass28.<BeginInvokeAction>b__19()
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<BeginInvokeAction>b__1b(IAsyncResult asyncResult) - System.Collections.ListDictionaryInternal
-2015-10-22 15:59:13,626 [18] ERROR NHS111.Utils.Logging.Log4Net - ERROR on Question/AutosuggestPathways:  Unexpected character encountered while parsing value: <. Path '', line 0, position 0. -    at Newtonsoft.Json.JsonTextReader.ParseValue()
-   at Newtonsoft.Json.JsonTextReader.ReadInternal()
-   at Newtonsoft.Json.JsonTextReader.Read()
-   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.ReadForType(JsonReader reader, JsonContract contract, Boolean hasConverter)
-   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
-   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
-   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
-   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
-   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
-   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
-   at NHS111.Web.Presentation.Builders.QuestionViewModelBuilder.<BuildSearch>d__13.MoveNext() in c:\DASProjects\Development\nhs111-dotnet-beta\NHS111\NHS111.Web.Presentation\Builders\QuestionViewModelBuilder.cs:line 101
+2015-10-19 15:54:43,987 [6] ERROR NHS111.Utils.Logging.Log4Net - ERROR on Question/AutosuggestPathways:  The remote server returned an error: (500) Internal Server Error. -    at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.DownloadBitsResponseCallback(IAsyncResult result)
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
-   at NHS111.Web.Controllers.QuestionController.<AutosuggestPathways>d__2.MoveNext() in c:\DASProjects\Development\nhs111-dotnet-beta\NHS111\NHS111.Web\Controllers\QuestionController.cs:line 32
+   at NHS111.Utils.Helpers.RestfulHelper.<GetAsync>d__2.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Utils\Helpers\RestfulHelper.cs:line 20
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Presentation.Builders.QuestionViewModelBuilder.<BuildSearch>d__10.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web.Presentation\Builders\QuestionViewModelBuilder.cs:line 100
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Controllers.QuestionController.<AutosuggestPathways>d__4.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web\Controllers\QuestionController.cs:line 32
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at lambda_method(Closure , Task )
-   at System.Threading.Tasks.TaskHelpersExtensions.ThrowIfFaulted(Task task)
    at System.Web.Mvc.Async.TaskAsyncActionDescriptor.EndExecute(IAsyncResult asyncResult)
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass34.<BeginInvokeAsynchronousActionMethod>b__33(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3c()
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass45.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3e()
-   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass30.<BeginInvokeActionMethodWithFilters>b__2f(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<>c__DisplayClass28.<BeginInvokeAction>b__19()
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<BeginInvokeAction>b__1b(IAsyncResult asyncResult) - System.Collections.ListDictionaryInternal
-2015-10-22 16:42:56,833 [22] ERROR NHS111.Utils.Logging.Log4Net - ERROR on Outcome/ServiceDetails:  Missing type map configuration or unsupported mapping.
-
-Mapping types:
-OutcomeViewModel -> DosCase
-NHS111.Models.Models.Web.OutcomeViewModel -> NHS111.Web.Presentation.Models.DosCase
-
-Destination path:
-DosCase
-
-Source value:
-NHS111.Models.Models.Web.OutcomeViewModel -    at NHS111.Web.Presentation.Builders.DOSBuilder.<BuildCheckCapacitySummaryRequest>d__e.MoveNext() in c:\DASProjects\Development\nhs111-dotnet-beta\NHS111\NHS111.Web.Presentation\Builders\DOSBuilder.cs:line 87
+2015-10-19 15:57:17,268 [14] ERROR NHS111.Utils.Logging.Log4Net - ERROR on Question/AutosuggestPathways:  The remote server returned an error: (500) Internal Server Error. -    at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.DownloadBitsResponseCallback(IAsyncResult result)
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
-   at NHS111.Web.Presentation.Builders.DOSBuilder.<DosResultsBuilder>d__1.MoveNext() in c:\DASProjects\Development\nhs111-dotnet-beta\NHS111\NHS111.Web.Presentation\Builders\DOSBuilder.cs:line 57
+   at NHS111.Utils.Helpers.RestfulHelper.<GetAsync>d__2.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Utils\Helpers\RestfulHelper.cs:line 20
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
-   at NHS111.Web.Controllers.OutcomeController.<DosResults>d__3.MoveNext() in c:\DASProjects\Development\nhs111-dotnet-beta\NHS111\NHS111.Web\Controllers\OutcomeController.cs:line 42
+   at NHS111.Web.Presentation.Builders.QuestionViewModelBuilder.<BuildSearch>d__10.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web.Presentation\Builders\QuestionViewModelBuilder.cs:line 100
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Controllers.QuestionController.<AutosuggestPathways>d__4.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web\Controllers\QuestionController.cs:line 32
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at lambda_method(Closure , Task )
-   at System.Threading.Tasks.TaskHelpersExtensions.ThrowIfFaulted(Task task)
    at System.Web.Mvc.Async.TaskAsyncActionDescriptor.EndExecute(IAsyncResult asyncResult)
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass34.<BeginInvokeAsynchronousActionMethod>b__33(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3c()
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass45.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3e()
-   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass30.<BeginInvokeActionMethodWithFilters>b__2f(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
-   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<>c__DisplayClass28.<BeginInvokeAction>b__19()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<BeginInvokeAction>b__1b(IAsyncResult asyncResult) - System.Collections.ListDictionaryInternal
+2015-10-19 15:57:17,268 [7] ERROR NHS111.Utils.Logging.Log4Net - ERROR on Question/AutosuggestPathways:  The remote server returned an error: (500) Internal Server Error. -    at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.DownloadBitsResponseCallback(IAsyncResult result)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Utils.Helpers.RestfulHelper.<GetAsync>d__2.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Utils\Helpers\RestfulHelper.cs:line 20
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Presentation.Builders.QuestionViewModelBuilder.<BuildSearch>d__10.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web.Presentation\Builders\QuestionViewModelBuilder.cs:line 100
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Controllers.QuestionController.<AutosuggestPathways>d__4.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web\Controllers\QuestionController.cs:line 32
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at lambda_method(Closure , Task )
+   at System.Web.Mvc.Async.TaskAsyncActionDescriptor.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass34.<BeginInvokeAsynchronousActionMethod>b__33(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass45.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3e()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<>c__DisplayClass28.<BeginInvokeAction>b__19()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<BeginInvokeAction>b__1b(IAsyncResult asyncResult) - System.Collections.ListDictionaryInternal
+2015-10-19 16:01:08,724 [7] ERROR NHS111.Utils.Logging.Log4Net - ERROR on Question/Navigation:  The remote server returned an error: (500) Internal Server Error. -    at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.DownloadBitsResponseCallback(IAsyncResult result)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Utils.Helpers.RestfulHelper.<GetAsync>d__2.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Utils\Helpers\RestfulHelper.cs:line 20
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Presentation.Builders.QuestionViewModelBuilder.<BuildQuestion>d__8.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web.Presentation\Builders\QuestionViewModelBuilder.cs:line 67
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Controllers.QuestionController.<Question>d__9.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web\Controllers\QuestionController.cs:line 80
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at lambda_method(Closure , Task )
+   at System.Web.Mvc.Async.TaskAsyncActionDescriptor.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass34.<BeginInvokeAsynchronousActionMethod>b__33(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass45.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3e()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<>c__DisplayClass28.<BeginInvokeAction>b__19()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<BeginInvokeAction>b__1b(IAsyncResult asyncResult) - System.Collections.ListDictionaryInternal
+2015-10-19 16:14:05,460 [7] ERROR NHS111.Utils.Logging.Log4Net - ERROR on Outcome/SearchSurgery:  Unable to connect to the remote server -    at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.DownloadBitsResponseCallback(IAsyncResult result)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Utils.Helpers.RestfulHelper.<GetAsync>d__2.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Utils\Helpers\RestfulHelper.cs:line 20
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Presentation.Builders.OutcomeViewModelBuilder.<SearchSurgeryBuilder>d__7.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web.Presentation\Builders\OutcomeViewModelBuilder.cs:line 40
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Controllers.OutcomeController.<SearchSurgery>d__3.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web\Controllers\OutcomeController.cs:line 24
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at lambda_method(Closure , Task )
+   at System.Web.Mvc.Async.TaskAsyncActionDescriptor.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass34.<BeginInvokeAsynchronousActionMethod>b__33(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass45.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3e()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<>c__DisplayClass28.<BeginInvokeAction>b__19()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<BeginInvokeAction>b__1b(IAsyncResult asyncResult) - System.Collections.ListDictionaryInternal
+2015-10-19 16:14:05,802 [7] ERROR NHS111.Utils.Logging.Log4Net - ERROR on Outcome/SearchSurgery:  Unable to connect to the remote server -    at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.DownloadBitsResponseCallback(IAsyncResult result)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Utils.Helpers.RestfulHelper.<GetAsync>d__2.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Utils\Helpers\RestfulHelper.cs:line 20
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Presentation.Builders.OutcomeViewModelBuilder.<SearchSurgeryBuilder>d__7.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web.Presentation\Builders\OutcomeViewModelBuilder.cs:line 40
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Controllers.OutcomeController.<SearchSurgery>d__3.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web\Controllers\OutcomeController.cs:line 24
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at lambda_method(Closure , Task )
+   at System.Web.Mvc.Async.TaskAsyncActionDescriptor.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass34.<BeginInvokeAsynchronousActionMethod>b__33(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass45.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3e()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<>c__DisplayClass28.<BeginInvokeAction>b__19()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<BeginInvokeAction>b__1b(IAsyncResult asyncResult) - System.Collections.ListDictionaryInternal
+2015-10-19 16:14:07,707 [7] ERROR NHS111.Utils.Logging.Log4Net - ERROR on Outcome/SearchSurgery:  Unable to connect to the remote server -    at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.DownloadBitsResponseCallback(IAsyncResult result)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Utils.Helpers.RestfulHelper.<GetAsync>d__2.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Utils\Helpers\RestfulHelper.cs:line 20
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Presentation.Builders.OutcomeViewModelBuilder.<SearchSurgeryBuilder>d__7.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web.Presentation\Builders\OutcomeViewModelBuilder.cs:line 40
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Controllers.OutcomeController.<SearchSurgery>d__3.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web\Controllers\OutcomeController.cs:line 24
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at lambda_method(Closure , Task )
+   at System.Web.Mvc.Async.TaskAsyncActionDescriptor.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass34.<BeginInvokeAsynchronousActionMethod>b__33(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass45.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3e()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<>c__DisplayClass28.<BeginInvokeAction>b__19()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<BeginInvokeAction>b__1b(IAsyncResult asyncResult) - System.Collections.ListDictionaryInternal
+2015-10-19 16:14:11,011 [7] ERROR NHS111.Utils.Logging.Log4Net - ERROR on Outcome/SearchSurgery:  Unable to connect to the remote server -    at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.DownloadBitsResponseCallback(IAsyncResult result)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Utils.Helpers.RestfulHelper.<GetAsync>d__2.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Utils\Helpers\RestfulHelper.cs:line 20
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Presentation.Builders.OutcomeViewModelBuilder.<SearchSurgeryBuilder>d__7.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web.Presentation\Builders\OutcomeViewModelBuilder.cs:line 40
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Controllers.OutcomeController.<SearchSurgery>d__3.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web\Controllers\OutcomeController.cs:line 24
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at lambda_method(Closure , Task )
+   at System.Web.Mvc.Async.TaskAsyncActionDescriptor.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass34.<BeginInvokeAsynchronousActionMethod>b__33(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass45.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3e()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<>c__DisplayClass28.<BeginInvokeAction>b__19()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<BeginInvokeAction>b__1b(IAsyncResult asyncResult) - System.Collections.ListDictionaryInternal
+2015-10-19 16:16:43,513 [6] ERROR NHS111.Utils.Logging.Log4Net - ERROR on Outcome/ServiceDetails:  The remote server returned an error: (404) Not Found. -    at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.DownloadBitsResponseCallback(IAsyncResult result)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Utils.Helpers.RestfulHelper.<GetAsync>d__2.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Utils\Helpers\RestfulHelper.cs:line 20
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Presentation.Builders.DOSBuilder.<DosResultsBuilder>d__7.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web.Presentation\Builders\DOSBuilder.cs:line 45
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Controllers.OutcomeController.<DosResults>d__4.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web\Controllers\OutcomeController.cs:line 42
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at lambda_method(Closure , Task )
+   at System.Web.Mvc.Async.TaskAsyncActionDescriptor.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass34.<BeginInvokeAsynchronousActionMethod>b__33(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass45.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3e()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<>c__DisplayClass28.<BeginInvokeAction>b__19()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<BeginInvokeAction>b__1b(IAsyncResult asyncResult) - System.Collections.ListDictionaryInternal
+2015-10-19 16:18:44,208 [7] ERROR NHS111.Utils.Logging.Log4Net - ERROR on Outcome/ServiceDetails:  The remote server returned an error: (404) Not Found. -    at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.DownloadBitsResponseCallback(IAsyncResult result)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Utils.Helpers.RestfulHelper.<GetAsync>d__2.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Utils\Helpers\RestfulHelper.cs:line 20
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Presentation.Builders.DOSBuilder.<DosResultsBuilder>d__7.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web.Presentation\Builders\DOSBuilder.cs:line 45
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Controllers.OutcomeController.<DosResults>d__4.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web\Controllers\OutcomeController.cs:line 42
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at lambda_method(Closure , Task )
+   at System.Web.Mvc.Async.TaskAsyncActionDescriptor.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass34.<BeginInvokeAsynchronousActionMethod>b__33(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass45.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3e()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<>c__DisplayClass28.<BeginInvokeAction>b__19()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<BeginInvokeAction>b__1b(IAsyncResult asyncResult) - System.Collections.ListDictionaryInternal
+2015-10-19 16:20:00,171 [14] ERROR NHS111.Utils.Logging.Log4Net - ERROR on Outcome/ServiceDetails:  The remote server returned an error: (404) Not Found. -    at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.DownloadBitsResponseCallback(IAsyncResult result)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Utils.Helpers.RestfulHelper.<GetAsync>d__2.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Utils\Helpers\RestfulHelper.cs:line 20
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Presentation.Builders.DOSBuilder.<DosResultsBuilder>d__7.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web.Presentation\Builders\DOSBuilder.cs:line 45
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Controllers.OutcomeController.<DosResults>d__4.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web\Controllers\OutcomeController.cs:line 42
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at lambda_method(Closure , Task )
+   at System.Web.Mvc.Async.TaskAsyncActionDescriptor.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass34.<BeginInvokeAsynchronousActionMethod>b__33(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass45.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3e()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<>c__DisplayClass28.<BeginInvokeAction>b__19()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<BeginInvokeAction>b__1b(IAsyncResult asyncResult) - System.Collections.ListDictionaryInternal
+2015-10-19 16:20:18,465 [14] ERROR NHS111.Utils.Logging.Log4Net - ERROR on Outcome/ServiceDetails:  The remote server returned an error: (404) Not Found. -    at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.DownloadBitsResponseCallback(IAsyncResult result)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Utils.Helpers.RestfulHelper.<GetAsync>d__2.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Utils\Helpers\RestfulHelper.cs:line 20
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Presentation.Builders.DOSBuilder.<DosResultsBuilder>d__7.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web.Presentation\Builders\DOSBuilder.cs:line 45
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Controllers.OutcomeController.<DosResults>d__4.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web\Controllers\OutcomeController.cs:line 42
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at lambda_method(Closure , Task )
+   at System.Web.Mvc.Async.TaskAsyncActionDescriptor.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass34.<BeginInvokeAsynchronousActionMethod>b__33(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass45.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3e()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<>c__DisplayClass28.<BeginInvokeAction>b__19()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<BeginInvokeAction>b__1b(IAsyncResult asyncResult) - System.Collections.ListDictionaryInternal
+2015-10-19 16:22:25,782 [25] ERROR NHS111.Utils.Logging.Log4Net - ERROR on Outcome/ServiceDetails:  The remote server returned an error: (404) Not Found. -    at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.DownloadBitsResponseCallback(IAsyncResult result)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Utils.Helpers.RestfulHelper.<GetAsync>d__2.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Utils\Helpers\RestfulHelper.cs:line 20
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Presentation.Builders.DOSBuilder.<DosResultsBuilder>d__7.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web.Presentation\Builders\DOSBuilder.cs:line 45
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Controllers.OutcomeController.<DosResults>d__4.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web\Controllers\OutcomeController.cs:line 42
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at lambda_method(Closure , Task )
+   at System.Web.Mvc.Async.TaskAsyncActionDescriptor.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass34.<BeginInvokeAsynchronousActionMethod>b__33(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass45.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3e()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<>c__DisplayClass28.<BeginInvokeAction>b__19()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<BeginInvokeAction>b__1b(IAsyncResult asyncResult) - System.Collections.ListDictionaryInternal
+2015-10-20 09:15:12,932 [63] ERROR NHS111.Utils.Logging.Log4Net - ERROR on Outcome/ServiceDetails:  Object reference not set to an instance of an object. -    at NHS111.Web.Presentation.Builders.DOSBuilder.<DosResultsBuilder>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at NHS111.Web.Controllers.OutcomeController.<DosResults>d__4.MoveNext() in C:\Users\Adam\workspaces\GIT\Choices\nhs111-dotnet-beta\NHS111\NHS111.Web\Controllers\OutcomeController.cs:line 42
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at lambda_method(Closure , Task )
+   at System.Web.Mvc.Async.TaskAsyncActionDescriptor.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass34.<BeginInvokeAsynchronousActionMethod>b__33(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass45.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3e()
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<>c__DisplayClass28.<BeginInvokeAction>b__19()
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass1e.<BeginInvokeAction>b__1b(IAsyncResult asyncResult) - System.Collections.ListDictionaryInternal

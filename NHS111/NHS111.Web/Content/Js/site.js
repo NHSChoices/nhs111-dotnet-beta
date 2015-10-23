@@ -86,7 +86,7 @@ $(document).ready(function () {
     // show manual entry
     $(".manualEntry").click(function () {
         $("#AddressList").hide();
-        $("#ManualEntryHome").show();
+        $("#AddressDetails").show();
         $(".enterManually").hide();
         $("#PC").hide();
 
@@ -106,22 +106,22 @@ $(document).ready(function () {
     //for disposition2 page
     $('.findEmergency .postcode').bind('input', function () {
         $(".searchPostcode").removeAttr('disabled');
-        
-        });  
+
+    });
 
     $('.findEmergency input.postcode').blur(function () {
         if ($(this).val().length === 0) {
-           $(".searchPostcode[type=submit]").attr('disabled', 'disabled');
+            $(".searchPostcode[type=submit]").attr('disabled', 'disabled');
         }
     });
-   
+
 
     $('.findEmergency input.postcode').bind('keyup', function (e) {
-       
+
         if (e.which == 8) {//backspace detected to disable the button
-           
+
             $(".searchPostcode[type=submit]").attr('disabled', 'disabled');
-        
+
         }
     });
 
