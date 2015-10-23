@@ -6,7 +6,8 @@ using NUnit.Framework;
 
 namespace NHS111.Domain.Integration.Test.Repository
 {
-    [Ignore]
+    [TestFixture]
+    [Ignore("Ignore these tests until network issues connecting to integration database have been resolved")]
     public class PathwayRepositoryTest : RepositoryTestBase
     {
         private PathwayRepository _pathwayRepository;
