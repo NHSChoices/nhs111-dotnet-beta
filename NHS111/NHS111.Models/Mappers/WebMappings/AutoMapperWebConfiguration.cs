@@ -11,6 +11,7 @@ namespace NHS111.Models.Mappers.WebMappings
                 cfg.AddProfile(new JourneyViewModelMapper());
                 cfg.AddProfile(new FromOutcomeViewModelToDosViewModel());
                 cfg.AddProfile(new FromPafToAddressInfo());
+                cfg.AddProfile(new FromOutcomeViewModelToDosCase());
             });
         }
     }
