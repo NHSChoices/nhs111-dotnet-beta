@@ -6,6 +6,7 @@ using NUnit.Framework;
 
 namespace NHS111.Domain.Integration.Test.Repository
 {
+    [Ignore]
     public class PathwayRepositoryTest : RepositoryTestBase
     {
         private PathwayRepository _pathwayRepository;
