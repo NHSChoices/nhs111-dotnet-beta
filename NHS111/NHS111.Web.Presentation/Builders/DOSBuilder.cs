@@ -14,6 +14,7 @@ using NHS111.Models.Models.Web.FromExternalServices;
 using NHS111.Utils.Cache;
 using NHS111.Utils.Helpers;
 using NHS111.Utils.Notifier;
+using NHS111.Web.Presentation.Models;
 using IConfiguration = NHS111.Web.Presentation.Configuration.IConfiguration;
 
 namespace NHS111.Web.Presentation.Builders
@@ -40,20 +41,10 @@ namespace NHS111.Web.Presentation.Builders
         public async Task<DosViewModel> DosResultsBuilder(OutcomeViewModel outcomeViewModel)
         {
             var model = _mappingEngine.Map<DosViewModel>(outcomeViewModel);
-            var surgery = new Surgery();
-            if (!string.IsNullOrEmpty(model.SelectedSurgery))
-                surgery = JsonConvert.DeserializeObject<Surgery>(await _restfulHelper.GetAsync(string.Format(_configuration.GPSearchApiUrl, model.SelectedSurgery)));
-            else
-                surgery.SurgeryId = "UKN";
+            var surgery = await GetSelectedSurgery(model);
 
-            var data = new StringBuilder("{\"serviceVersion\":\"1.3\",\"userInfo\":{\"username\":\"digital111_ws\",\"password\":\"Valtech111\"},")
-            .Append("\"c\":{\"caseRef\":\"123\",\"caseId\":\"123\",\"postcode\":\"" + model.PostCode + "\",\"surgery\":\"")
-            .Append(surgery.SurgeryId + "\",\"age\":" + model.Age + ",")
-            .Append("\"ageFormat\":0,\"disposition\":" + model.Id.Replace("Dx", "10"))
-            .Append(",\"symptomGroup\":" + model.SymptomGroup + ",\"symptomDiscriminatorList\":[" + model.SymptomDiscriminator + "],")
-            .Append("\"searchDistanceSpecified\":false,\"gender\":\"" + model.Gender.First() + "\"}}");
-
-            var request = new HttpRequestMessage { Content = new StringContent(data.ToString(), Encoding.UTF8, "application/json") };
+            var capacitySummaryRequest = await BuildCheckCapacitySummaryRequest(outcomeViewModel, surgery);
+            var request = new HttpRequestMessage { Content = new StringContent(JsonConvert.SerializeObject(capacitySummaryRequest), Encoding.UTF8, "application/json") };
             var response = await _restfulHelper.PostAsync(_configuration.BusinessDosCheckCapacitySummaryUrl, request);
             if (response.StatusCode == HttpStatusCode.OK)
             {
@@ -69,6 +60,28 @@ namespace NHS111.Web.Presentation.Builders
             }
 
             return model;
+        }
+
+        public async Task<DosCheckCapacitySummaryRequest> BuildCheckCapacitySummaryRequest(
+            OutcomeViewModel outcomeViewModel, Surgery surgery)
+        {
+            var model = _mappingEngine.Map<DosViewModel>(outcomeViewModel);
+
+            var dosCase = _mappingEngine.Map<OutcomeViewModel, DosCase>(outcomeViewModel);
+            dosCase.Surgery = surgery.SurgeryId;
+            return new DosCheckCapacitySummaryRequest(_configuration.DosUsername, _configuration.DosPassword, dosCase);
+        }
+
+        private async Task<Surgery> GetSelectedSurgery(DosViewModel model)
+        {
+            var surgery = new Surgery();
+            if (!string.IsNullOrEmpty(model.SelectedSurgery))
+                surgery =
+                    JsonConvert.DeserializeObject<Surgery>(
+                        await _restfulHelper.GetAsync(string.Format(_configuration.GPSearchApiUrl, model.SelectedSurgery)));
+            else
+                surgery.SurgeryId = "UKN";
+            return surgery;
         }
 
         public async Task<DosViewModel> FillServiceDetailsBuilder(DosViewModel model)

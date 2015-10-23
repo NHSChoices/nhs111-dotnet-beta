@@ -27,13 +27,6 @@ namespace NHS111.Web.Controllers
         }
 
 
-        //[HttpPost]
-        //[ActionName("UserInfo")]
-        //[MultiSubmit(ButtonName = "GPSearch")]
-        //public async Task<ActionResult> GpSearch(OutcomeViewModel model)
-        //{
-        //    return View("GpSearch", model);
-        //}
 
         [HttpPost]
         [ActionName("ServiceDetails")]

@@ -23,6 +23,9 @@ namespace NHS111.Web.Presentation.Configuration
         public string IntegrationApiItkDispatcher { get { return ConfigurationManager.AppSettings["IntegrationApiItkDispatcher"]; } }
         public string BusinessApiFirstQuestionUrl { get { return ConfigurationManager.AppSettings["BusinessApiFirstQuestionUrl"]; } }
         public string RedisConnectionString { get { return ConfigurationManager.AppSettings["RedisConnectionString"]; } }
+        public string DosUsername { get { return ConfigurationManager.AppSettings["dos_credential_user"]; } }
+        public string DosPassword { get { return ConfigurationManager.AppSettings["dos_credential_password"]; } }
+
     }
 
     public interface IConfiguration
@@ -46,5 +49,7 @@ namespace NHS111.Web.Presentation.Configuration
         string IntegrationApiItkDispatcher { get; }
         string BusinessApiFirstQuestionUrl { get; }
         string RedisConnectionString { get; }
+        string DosUsername { get; }
+        string DosPassword { get; }
     }
 }
