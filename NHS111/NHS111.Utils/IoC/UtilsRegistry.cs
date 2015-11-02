@@ -12,7 +12,7 @@ namespace NHS111.Utils.IoC
     {
         public UtilsRegistry()
         {
-            For<Producer>().Use(new Producer(new BrokerRouter(new KafkaOptions(new Uri("net.tcp://kafka.dev.medplus.steinhauer.technology:9092")))));
+            //For<Producer>().Use(new Producer(new BrokerRouter(new KafkaOptions(new Uri("net.tcp://kafka.dev.medplus.steinhauer.technology:9092")))));
             Scan(scan =>
             {
                 scan.TheCallingAssembly();
