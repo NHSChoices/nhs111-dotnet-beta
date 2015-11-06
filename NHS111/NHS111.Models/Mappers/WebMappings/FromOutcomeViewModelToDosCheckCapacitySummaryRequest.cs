@@ -53,6 +53,7 @@ namespace NHS111.Models.Mappers.WebMappings
         {
             protected override int[] ResolveCore(string source)
             {
+                if (source == null) return new int[0];
                 int intVal =0;
                 if (!int.TryParse(source, out intVal)) throw new FormatException("Cannnot convert SymptomDiscriminator.  Not of integer format");
 
