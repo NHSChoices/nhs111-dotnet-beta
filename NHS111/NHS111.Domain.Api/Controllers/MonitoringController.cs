@@ -30,6 +30,9 @@ namespace NHS111.Domain.Api.Controllers
                 case "health":
                     return (await _monitor.Health()).ToString();
 
+                case "version":
+                    return _monitor.Version();
+
                 default:
                     return null;
             }
