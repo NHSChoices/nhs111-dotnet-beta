@@ -12,5 +12,7 @@ namespace NHS111.Utils.Monitoring
         public abstract string Metrics();
 
         public abstract Task<bool> Health();
+
+        public abstract string Version();
     }
 }

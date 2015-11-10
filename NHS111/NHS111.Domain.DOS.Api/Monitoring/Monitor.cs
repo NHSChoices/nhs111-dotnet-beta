@@ -7,6 +7,8 @@ using NHS111.Utils.Monitoring;
 
 namespace NHS111.Domain.DOS.Api.Monitoring
 {
+    using System.Reflection;
+
     public class Monitor : BaseMonitor
     {
         private readonly IRestfulHelper _restfulHelper;
@@ -34,6 +36,10 @@ namespace NHS111.Domain.DOS.Api.Monitoring
                 return false;
             }
             
+        }
+
+        public override string Version() {
+            return Assembly.GetCallingAssembly().GetName().Version.ToString();
         }
     }
 }
