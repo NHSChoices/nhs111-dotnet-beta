@@ -5,6 +5,8 @@ using NHS111.Utils.Monitoring;
 
 namespace NHS111.Domain.Monitoring
 {
+    using System.Reflection;
+
     public class Monitor : BaseMonitor
     {
         private readonly IMonitorRepository _monitorRepository;
@@ -30,6 +32,10 @@ namespace NHS111.Domain.Monitoring
                 return false;
             }
             
+        }
+
+        public override string Version() {
+            return Assembly.GetCallingAssembly().GetName().Version.ToString();
         }
     }
 }

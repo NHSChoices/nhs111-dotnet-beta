@@ -7,5 +7,6 @@ namespace NHS111.Utils.Monitoring
         string Ping();
         string Metrics();
         Task<bool> Health();
+        string Version();
     }
 }
