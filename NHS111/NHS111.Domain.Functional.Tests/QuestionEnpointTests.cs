@@ -48,7 +48,7 @@ namespace NHS111.Domain.Functional.Tests
             Assert.IsTrue(result.Contains("\"id\":\"" + _testQuestionId + "\""));
             AssertValidResponseSchema(result, ResponseSchemaType.Question);
 
-            //this next one checks the right question has returned
+            //this next one checks the right question has returned.
             Assert.IsTrue(result.Contains("\"questionNo\":\"Tx1506"));
         }
 
