@@ -22,9 +22,9 @@ namespace NHS111.Domain.Functional.Tests
         private RestfulHelper _restfulHelper = new RestfulHelper();
 
         /// <summary>
-        /// Example test method for a HTTP GET
+        /// Example test method for a HTTP GET.
         /// </summary>
-        // Question Controller tests
+        // Question Controller tests.
         [Test]
         public async void TestGetQuestion_returns_valid_response()
         {
@@ -42,9 +42,9 @@ namespace NHS111.Domain.Functional.Tests
             var getQuestionEndpoint = "questions/{0}";
             var result = await _restfulHelper.GetAsync(String.Format(_domainApiDomain + getQuestionEndpoint, _testQuestionId));
 
-            //this checks a responce is returned
+            //this checks a responce is returned.
             Assert.IsNotNull(result);
-            //these check the right fields are returned
+            //these check the right fields are returned.
             Assert.IsTrue(result.Contains("\"id\":\"" + _testQuestionId + "\""));
             AssertValidResponseSchema(result, ResponseSchemaType.Question);
 
@@ -60,18 +60,18 @@ namespace NHS111.Domain.Functional.Tests
             var getQuestionEndpoint = "questions/{0}/answers";
             var result = await _restfulHelper.GetAsync(String.Format(_domainApiDomain + getQuestionEndpoint, _testQuestionId));
 
-            //this checks a responce is returned
+            //this checks a responce is returned.
             Assert.IsNotNull(result);
 
-            //these check the right fields are returned
+            //these check the right fields are returned.
             Assert.IsTrue(result.Contains("\"title"));
             Assert.IsTrue(result.Contains("\"symptomDiscriminator"));
             Assert.IsTrue(result.Contains("\"order"));
 
-            //these check the wrong fields are not returned
+            //these check the wrong fields are not returned.
             AssertValidResponseSchema(result, ResponseSchemaType.Answer);
 
-            //this next one checks the right answers have returned
+            //this next one checks the right answers have returned.
             Assert.IsTrue(result.Contains("\"title\":\"Yes"));
             Assert.IsTrue(result.Contains("\"title\":\"I'm not sure"));
             Assert.IsTrue(result.Contains("\"title\":\"No"));
