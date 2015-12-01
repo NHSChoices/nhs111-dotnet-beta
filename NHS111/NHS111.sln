@@ -58,6 +58,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHS111.Domain.Integration.Test", "NHS111.Domain.Integration.Test\NHS111.Domain.Integration.Test.csproj", "{A4050C4E-171F-464C-872C-77DA5102533E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHS111.Domain.Functional.Tests", "NHS111.Domain.Functional.Tests\NHS111.Domain.Functional.Tests.csproj", "{3AD560C8-63E7-48CF-89F8-805F92171124}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -237,6 +239,16 @@ Global
 		{A4050C4E-171F-464C-872C-77DA5102533E}.Test|Any CPU.Build.0 = Release|Any CPU
 		{A4050C4E-171F-464C-872C-77DA5102533E}.UAT|Any CPU.ActiveCfg = Release|Any CPU
 		{A4050C4E-171F-464C-872C-77DA5102533E}.UAT|Any CPU.Build.0 = Release|Any CPU
+		{3AD560C8-63E7-48CF-89F8-805F92171124}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AD560C8-63E7-48CF-89F8-805F92171124}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AD560C8-63E7-48CF-89F8-805F92171124}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AD560C8-63E7-48CF-89F8-805F92171124}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{3AD560C8-63E7-48CF-89F8-805F92171124}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AD560C8-63E7-48CF-89F8-805F92171124}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AD560C8-63E7-48CF-89F8-805F92171124}.Test|Any CPU.ActiveCfg = Release|Any CPU
+		{3AD560C8-63E7-48CF-89F8-805F92171124}.Test|Any CPU.Build.0 = Release|Any CPU
+		{3AD560C8-63E7-48CF-89F8-805F92171124}.UAT|Any CPU.ActiveCfg = Release|Any CPU
+		{3AD560C8-63E7-48CF-89F8-805F92171124}.UAT|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
