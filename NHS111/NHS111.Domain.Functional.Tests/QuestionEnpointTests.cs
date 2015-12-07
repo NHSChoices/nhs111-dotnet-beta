@@ -255,10 +255,14 @@ namespace NHS111.Domain.Functional.Tests
         {
             var getNextQuestionEndpoint = "questions/{0}/answersNext";
             var expectedNextId = "PW756.300";
+            var address = String.Format(_domainApiDomain + getNextQuestionEndpoint, _testQuestionId);
+            Console.WriteLine(address);
             var result =
-                await _restfulHelper.PostAsync(String.Format(_domainApiDomain + getNextQuestionEndpoint, _testQuestionId), CreateHTTPRequest("yes"));
+                await _restfulHelper.PostAsync(address, CreateHTTPRequest("yes"));
 
             var resultContent = await result.Content.ReadAsStringAsync();
+
+            Assert.IsNotNull(result);
 
             Assert.IsTrue(result.IsSuccessStatusCode);
             Assert.IsTrue(resultContent.Contains("\"id\":\"" + expectedNextId + "\""));
