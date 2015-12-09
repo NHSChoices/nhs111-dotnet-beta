@@ -257,12 +257,13 @@ namespace NHS111.Domain.Functional.Tests
             var expectedNextId = "PW756.300";
             var address = String.Format(_domainApiDomain + getNextQuestionEndpoint, _testQuestionId);
             Console.WriteLine(address);
+            System.Net.ServicePointManager.Expect100Continue = false;
             var result =
                 await _restfulHelper.PostAsync(address, CreateHTTPRequest("yes"));
 
             var resultContent = await result.Content.ReadAsStringAsync();
             Console.WriteLine((int)result.StatusCode);
-            Console.WriteLine(result.Content.ReadAsStringAsync());
+            Console.WriteLine(result.Content.ReadAsStringAsync().Result);
             Assert.IsNotNull(result);
 
             Assert.IsTrue(result.IsSuccessStatusCode);
