@@ -261,7 +261,8 @@ namespace NHS111.Domain.Functional.Tests
                 await _restfulHelper.PostAsync(address, CreateHTTPRequest("yes"));
 
             var resultContent = await result.Content.ReadAsStringAsync();
-
+            Console.WriteLine((int)result.StatusCode);
+            Console.WriteLine(result.Content.ReadAsStringAsync());
             Assert.IsNotNull(result);
 
             Assert.IsTrue(result.IsSuccessStatusCode);
