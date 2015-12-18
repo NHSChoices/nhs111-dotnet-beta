@@ -27,7 +27,9 @@ namespace NHS111.Utils.Helpers
             {
                 Content = new StringContent(data, Encoding.UTF8, "application/json")
             };
-
+            foreach (var header in request.Headers) {
+                Console.WriteLine(header.Key + ": " + string.Join(", ", header.Key));
+            }
             return await new HttpClient().SendAsync(httpRequestMessage);
         }
     }
