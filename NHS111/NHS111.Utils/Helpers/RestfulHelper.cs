@@ -25,8 +25,9 @@ namespace NHS111.Utils.Helpers
             var data = await request.Content.ReadAsStringAsync();
             var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, new Uri(url))
             {
-                Content = new StringContent(data, Encoding.UTF8, "application/json")
-            };
+                Content = new StringContent(data, Encoding.UTF8, "application/json"),
+                Version = HttpVersion.Version10 //forcing 1.0 to prevent Expect 100 Continue header
+        };
             foreach (var header in request.Headers) {
                 Console.WriteLine(header.Key + ": " + string.Join(", ", header.Key));
             }
