@@ -5,7 +5,8 @@ using NHS111.Models.Models.Web;
 using NHS111.Utils.Attributes;
 using NHS111.Web.Presentation.Builders;
 
-namespace NHS111.Web.Controllers {
+namespace NHS111.Web.Controllers
+{
 
     [LogHandleErrorForMVC]
     public class QuestionController : Controller
