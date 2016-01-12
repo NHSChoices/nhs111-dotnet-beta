@@ -1,15 +1,15 @@
-﻿using System;
-using System.ComponentModel;
-using System.Net.Http;
-using System.Security.Policy;
-using System.Text;
-using NHS111.Utils.Helpers;
-using NUnit.Framework;
-
-namespace NHS111.Domain.Functional.Tests
+﻿
+namespace NHS111.Business.API.Functional.Tests
 {
+    using System;
+    using System.ComponentModel;
+    using System.Net.Http;
+    using System.Text;
+    using Utils.Helpers;
+    using NUnit.Framework;
+
     [TestFixture]
-    public class BusinessQuestionEndpointTests
+    public class QuestionEndpointTests
     {
         private string _BusinessdomainApiDomain =
             "https://microsoft-apiapp40f6723d48db47ed8f4d3ff1-integration.azurewebsites.net/";
@@ -21,7 +21,7 @@ namespace NHS111.Domain.Functional.Tests
         private string _testPathwayId4 = "PW752";
         private string _testPathwayNo = "PW1401";
         private string _expectedNodeId = "PW752.200";
-        
+
 
         private RestfulHelper _restfulHelper = new RestfulHelper();
 
@@ -36,12 +36,12 @@ namespace NHS111.Domain.Functional.Tests
 
 
             Assert.IsNotNull(result);
-           
+
             //these check the right fields are returned
             AssertValidResponseSchema(result, ResponseSchemaType.Question);
 
             Assert.IsTrue(result.Contains("\"id\":\"PW758.0"));
-           
+
         }
 
         [Test]
@@ -58,8 +58,8 @@ namespace NHS111.Domain.Functional.Tests
 
             //this next one checks the right question has returned
             Assert.IsTrue(result.Contains("\"title\":\"Yes\",\"symptomDiscriminator\":\"4028\",\"order\":1"));
-         }
-         
+        }
+
 
         [Test]
         public async void TestGetQuestion_returns_valid_node_question()
@@ -103,7 +103,7 @@ namespace NHS111.Domain.Functional.Tests
 
             //this checks an empty responce is returned as JTBS questions not implemented yet
             Assert.IsNotNull(result);
-                        Assert.IsTrue(result.Contains("[]"));
+            Assert.IsTrue(result.Contains("[]"));
 
         }
 
@@ -155,7 +155,7 @@ namespace NHS111.Domain.Functional.Tests
             Assert.IsTrue(result.Contains("\"title\":\"Needlestick injury"));
         }
 
-     
+
 
         // Pathways Controller tests
 
@@ -241,7 +241,7 @@ namespace NHS111.Domain.Functional.Tests
 
 
         }
-      
+
         [Test]
         public async void TestGetQuestion_returns_valid_Pathway_Symptom_Group()
         {
@@ -270,7 +270,7 @@ namespace NHS111.Domain.Functional.Tests
             //these check the right fields are returned
             AssertValidResponseSchema(result, ResponseSchemaType.Pathway);
 
-           //this next one checks the right question has returned
+            //this next one checks the right question has returned
             Assert.IsTrue(result.Contains("\"title\":\"Headache"));
             Assert.IsTrue(result.Contains("\"title\":\"Head, Facial or Neck Injury, Blunt"));
             Assert.IsTrue(result.Contains("\"id\":\"P130"));
@@ -281,7 +281,7 @@ namespace NHS111.Domain.Functional.Tests
             Assert.IsTrue(result.Contains("\"pathwayNo\":\"PW1401"));
 
         }
-        
+
         [Test]
         //pathway_suggest/{name}
         public async void TestGetQuestion_returns_expected_Pathways_beginning_with()
@@ -334,7 +334,7 @@ namespace NHS111.Domain.Functional.Tests
                     throw new InvalidEnumArgumentException("ResponseSchemaType of " + schemaType.ToString() +
                                                        "is unsupported");
             }
-            
+
         }
 
 
@@ -373,7 +373,7 @@ namespace NHS111.Domain.Functional.Tests
 
         private static void AssertValidQuestionResponseSchema(string result)
         {
-            
+
             Assert.IsTrue(result.Contains("\"Question"));
             Assert.IsTrue(result.Contains("\"group"));
             Assert.IsTrue(result.Contains("\"order"));

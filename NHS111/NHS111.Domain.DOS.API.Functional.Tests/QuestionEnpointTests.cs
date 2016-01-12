@@ -1,17 +1,14 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Net.Http;
-using System.Security.Policy;
 using System.Text;
 using NHS111.Utils.Helpers;
 using NUnit.Framework;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace NHS111.Domain.Functional.Tests
+namespace NHS111.Domain.DOS.API.Functional.Tests
 {
     [TestFixture]
-    public class DoSDomainQuestionEndpointTests
+    public class QuestionEnpointTests
     {
         private string _domainApiDomain =
             "http://microsoft-apiapp089e023e4ca84f6bac0493c7-integration.azurewebsites.net/";
