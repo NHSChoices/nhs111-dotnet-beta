@@ -1,31 +1,30 @@
-﻿using System;
-using System.ComponentModel;
-using System.Net.Http;
-using System.Security.Policy;
-using System.Text;
-using NHS111.Utils.Helpers;
-using NUnit.Framework;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+﻿
 
-namespace NHS111.Domain.Functional.Tests
+namespace NHS111.Business.DOS.API.Functional.Tests
 {
+    using System.ComponentModel;
+    using System.Net.Http;
+    using System.Text;
+    using NHS111.Utils.Helpers;
+    using NUnit.Framework;
+    using Newtonsoft.Json.Linq;
+
     [TestFixture]
-    public class DoSIntegrationDomainQuestionEndpointTests
+    public class QuestionEnpointTests
     {
         private string _domainApiDomain =
-            "http://microsoft-apiapp43fb9d8955b94ab3a6282bea-integration.azurewebsites.net/";
+            "https://microsoft-apiapp9783ffa9d6244e6590fec540-integration.azurewebsites.net/";
 
-        
+
         private RestfulHelper _restfulHelper = new RestfulHelper();
 
         /// <summary>
         /// Example test method for a HTTP POST
         /// </summary>
         [Test]
-        public async void TestCheckDosIntegrationCapacitySumary()
+        public async void TestCheckDoSBusinessCapacitySumary()
         {
-            var getNextQuestionEndpoint = "IntegrationDOSapi/CheckCapacitySummary";
+            var getNextQuestionEndpoint = "DOSapi/CheckCapacitySummary";
             var result = await _restfulHelper.PostAsync(_domainApiDomain + getNextQuestionEndpoint, CreateHTTPRequest("{\"ServiceVersion\":\"1.3\",\"UserInfo\":{\"Username\":\"digital111_ws\",\"Password\":\"Valtech111\"},\"c\":{\"Postcode\":\"HP21 8AL\"}}"));
 
             var resultContent = await result.Content.ReadAsStringAsync();
@@ -38,8 +37,8 @@ namespace NHS111.Domain.Functional.Tests
             //Assert.IsNotNull(serviceTypeField.idField);
             //Assert.AreEqual("40", (string)serviceTypeField.idField);
             Assert.IsTrue(result.IsSuccessStatusCode);
-                  
-          }
+
+        }
 
         private void AssertResponse(dynamic response)
         {
@@ -72,9 +71,9 @@ namespace NHS111.Domain.Functional.Tests
             Assert.IsNotNull(response.serviceTypeField);
             Assert.IsNotNull(response.odsCodeField);
             Assert.IsNotNull(response.rootParentField);
-            Assert.IsNotNull(response.PropertyChanged); 
-   
-          }
+            Assert.IsNotNull(response.PropertyChanged);
+
+        }
 
         public static HttpRequestMessage CreateHTTPRequest(string requestContent)
         {
@@ -84,24 +83,24 @@ namespace NHS111.Domain.Functional.Tests
             };
         }
 
-          [Test]
-        public async void TestCheckDosIntegrationServiceDetailsById()
+        [Test]
+        public async void TestCheckDosBusinessServiceDetailsById()
         {
-            var getNextQuestionEndpoint = "IntegrationDOSapi/ServiceDetailsById";
+            var getNextQuestionEndpoint = "DOSapi/ServiceDetailsById";
             var result = await _restfulHelper.PostAsync(_domainApiDomain + getNextQuestionEndpoint, CreateHTTPRequest("{\"ServiceVersion\":\"1.3\",\"UserInfo\":{\"Username\":\"digital111_ws\",\"Password\":\"Valtech111\"},\"serviceId\":1315835856}"));
 
             var resultContent = await result.Content.ReadAsStringAsync();
 
             Assert.IsTrue(result.IsSuccessStatusCode);
             AssertValidResponseSchema(resultContent, ResponseSchemaType.CheckServiceDetailsById);
-          }
+        }
 
 
         public enum ResponseSchemaType
         {
- 
+
             CheckServiceDetailsById
-          }
+        }
 
         private static void AssertValidResponseSchema(string result, ResponseSchemaType schemaType)
         {
@@ -115,7 +114,7 @@ namespace NHS111.Domain.Functional.Tests
                     throw new InvalidEnumArgumentException("ResponseSchemaType of " + schemaType.ToString() +
                                                        "is unsupported");
             }
-                    }
+        }
 
 
         private static void AssertValidCheckServiceDetailsByIdResponseSchema(string result)
